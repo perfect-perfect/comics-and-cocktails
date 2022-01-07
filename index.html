@@ -1,13 +1,11 @@
-<!-- HTML refers to the DOM (Document Object Model) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- bootstrap link for if you want to use bootstrap -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
     <!-- make sure the GoogleFonts link come before the css link if you want to use fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
      
@@ -20,15 +18,15 @@
     <title>Comics and Cocktails</title>
 </head>
 
-<body class="flex-column min-100-vh">
-    <header >
+<body>
+    <header class="header">
         <!-- navigation will have interactive buttons that take you to other parts of the application -->
-       <nav>
-           <h1>
-               <button>Comics and Cocktails</button>
-               <button>Saved Cocktails</button>
+        <nav>
+            <h1>
+                <button type="button" id="comics-and-cocktails">Comics and Cocktails</button>
+                <button type="button" id="saved-cocktails">Saved Cocktails</button>
             </h1>
-       </nav>
+        </nav>
     </header>
     
     <main>
@@ -37,7 +35,10 @@
     </main>
 
     <footer>
-       
+       <h2>
+            <button type="button" id="drink-disclaimer">Read Our Disclaimer
+                <a href="./disclaimer-policy.html"></a>
+            </button>
     </footer>
 
     <!-- JavaScript link can go inside the body or between /body & /html tags -->
