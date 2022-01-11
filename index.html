@@ -19,19 +19,40 @@
 </head>
 
 <body>
-    <header class="header">
+    <section class="main header">
         <!-- navigation will have interactive buttons that take you to other parts of the application -->
         <nav>
-            <h1>
-                <button type="button" id="comics-and-cocktails">Comics and Cocktails</button>
-                <button type="button" id="saved-cocktails">Saved Cocktails</button>
-            </h1>
+            <h1 class="py-6 is-size-1 has-text-centered has-text-danger"> Welcome to Comics and Cocktails!</h1>
+                  <!--<button type="button" id="comics-and-cocktails">Comics and Cocktails</button>-->
+                <!--<button type="button" id="saved-cocktails">Saved Cocktails</button> -->
+               <nav class="navbar is-danger">
+                   <!-- navbar brand, navbar menu... -->
+                   <div class="navbar-brand">
+                       <a class="navbar-item">
+                           <img src="assets/images/drink.jpg" alt="drink icon">
+                       </a>
+                   </div>
+
+                   <div class="navbar-menu has text centered" id="nav-links">
+                       <div class="navbar-start">
+                           <a class="navbar-item">Saved Cocktails</a>
+                           <a class="navbar-item">Saved Comics</a>
+                           <a class="navber-item">Home</a>
+                       </div>
+                   </div>
+                  </nav>
+                </h1>
         </nav>
     </header>
-    
-    <main>
+       <main>
         <!-- divide page into sections -->
-        <div></div>     
+        <button class="button is-warning">
+            Drink of the day!
+           </button>
+
+        <div>
+           
+        </div>     
     </main>
 
     <footer>
