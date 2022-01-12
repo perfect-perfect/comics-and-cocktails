@@ -33,7 +33,7 @@
                            <div class="tile is-parent" width="100%">
                                <article class="tile is-child box">
                                    <!-- can't seem to get this imag larger!  DOH!-->
-                                   <figure class="image is-264by264">
+                                   <figure class="image is-264by264" >
                                     <img src="assets/images/drink.jpg" alt="drink icon" image is-square></img> 
                                     </figure>                                  
                                 </article>
@@ -99,13 +99,9 @@
         <div class="tile is-ancestor">
             <div class="tile is-parent">
                 <article class="tile is-child box">
-                    <div class="columns">
-                        <div class="column">Drink Pic
-                            <section id="drink-wrapper" class="drink-picture">
-                                    <img id="drink-img" height="400" width="500">
-                                    <!-- Javascript will dynamically generate API content here -->                
-                            </section>
-                        </div>
+                   <div class="drink-picture" id="drink-picture">Drink Pic
+                            <img id="drink-img" height="500" width="500">
+                            <!-- Javascript will dynamically generate API content here -->                
                     </div>
                 </article>
             </div>
@@ -126,17 +122,11 @@
     <div class="tile is-ancestor">
         <div class="tile is-parent">
             <article class="tile is-child box">
-                <div class="columns">
-                    <div class="column">COMIC
-                        <section class="comic-wrapper" id="comic-wrapper">
-                            <!-- comic section-->
-                            <div class="comic" id="comic">
-                                <img id="comic-img" height="500" width="1250">
-                            <!-- JavaScript will dynamically generate API content here-->
-                            </div>
-                        </section>
-                    </div>
-                </div>
+                <!-- comic section-->
+                <div class="comic" id="comic">COMIC
+                    <img id="comic-img" height="500" width="1200">
+                    <!-- JavaScript will dynamically generate API content here-->
+                </div>   
             </article>
         </div>
     </div>
