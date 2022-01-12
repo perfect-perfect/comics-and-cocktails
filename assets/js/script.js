@@ -1,4 +1,3 @@
-
 // uses JavaScript Classes to build clock
 class DigitalClock {
     constructor(element) {
@@ -74,3 +73,5 @@ var drinkImg = document.querySelector("#drink-image");
     cocktailCall();
 
   })
+
+  
