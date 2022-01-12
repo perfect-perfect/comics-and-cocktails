@@ -20,6 +20,7 @@
 .box {
   background: linear-gradient(to right, rgb(233, 197, 197), rgb(96, 93, 90));
   border-radius: 3px;
+  box-shadow: 0 0.5em 1em;
 }
 
 .navbar {
