@@ -20,50 +20,100 @@
 </head>
 
 <body>
-    <header class="header">
+    <section class="main header">
         <!-- navigation will have interactive buttons that take you to other parts of the application -->
         <nav>
-            <h1>
-                <button type="button" id="comics-and-cocktails">Comics and Cocktails</button>
-                <button type="button" id="saved-cocktails">Saved Cocktails</button>
-            </h1>
+            <h1 class="py-6 is-size-1 has-text-centered has-text-danger"> Welcome to Comics and Cocktails!</h1>
+                  <!--<button type="button" id="comics-and-cocktails">Comics and Cocktails</button>-->
+                <!--<button type="button" id="saved-cocktails">Saved Cocktails</button> -->
+               <nav class="navbar is-danger">
+                   <!-- navbar brand, navbar menu... -->
+                   <div class="navbar-brand">
+                       <a class="navbar-item">
+                           <img src="assets/images/drink.jpg" alt="drink icon">
+                       </a>
+                   </div>
+
+                   <div class="navbar-menu" id="nav-links">
+                       <div class="navbar-start">
+                           <a class="navbar-item">Saved Cocktails</a>
+                           <a class="navbar-item">Saved Comics</a>
+                           <a class="navber-item">Home</a>
+                       </div>
+                   </div>
+                  </nav>
+                </h1>
         </nav>
     </header>
+       <main>
+        <!-- divide page into sections -->
+        <button class="button is-warning">
+            Drink of the day!
+           </button>
 
+        <div>
+           
+        </div>     
+
+    </main>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">
+                    <button class="button is-link is-medium is-mobile" id="comics-and-cocktails">Comics and Cocktails</button>
+                    <button class="button is-link is-medium is-mobile" id="saved-cocktails">Saved Cocktails</button>
+                </h1>
+            </div>
+        </section>
+        </nav>
+    </header>
+    
     <main class="page-content" id="page-content">
         <!-- need to get time to show here-->
-        <section class="time"></div>
+        <div class="columns">
+            <div class="column">
+                <section class="time">
+                    <div class="time">
+                        <span id="hour">00</span>:
+                        <span id="minutes">00</span>
+                    </div>
+                </section>
+            </div>
+        </div>
         <!-- drinks section -->
-        <section class="drink-wrapper" id="drink-wrapper">
+        <div class="columns">
+            <div class="column">
+                <section class="drink-wrapper" id="drink-wrapper">
 
-            <!-- drink picture-->
-            <div class="drink-picture" id="drink-picture">
-                
-                <img id="drink-image" alt="Cocktail image" width="500" height="500" enabled="false">
-                <!-- Javascript will dynamically generate API content here -->
+                    <!-- drink picture-->
+                    <div class="drink-picture" id="drink-picture">Drink Pic
+                        <!-- Javascript will dynamically generate API content here -->
+                    </div>                  
+                </section>
             </div>
 
-            <!-- drink recipe -->
-            <div class="drink-recipe" id="drink-recipe">
-                <!-- Javascript will dynamically generate API content here -->
+                <!-- drink recipe --> 
+            <div class="column">Drink Recipe              
+                <section class="drink-recipe" id="drink-recipe">
+                    <!-- Javascript will dynamically generate API content here -->
+                </section>
             </div>
+        </div>
+      
+        <div class="columns">
+            <div class="column">COMIC
+            <section class="comic-wrapper" id="comic-wrapper">
 
-        </div> 
-        <section class="comic-wrapper" id="comic-wrapper">
-
-            <!-- comic section-->
-            <div class="comic" id="comic">
-                <!-- JavaScript will dynamically generate API content here-->
+                <!-- comic section-->
+                <div class="comic" id="comic">
+                    <!-- JavaScript will dynamically generate API content here-->
+                </div>
+            </section>
             </div>
-
-        </section>    
-    </main>
+        </div>    
+    </main><br><br>
 
     <footer>
        <h2>
-            <button type="button" id="drink-disclaimer">Read Our Disclaimer
-                <a href="./disclaimer-policy.html"></a>
-            </button>
     </footer>
 
     <!-- JavaScript link can go inside the body or between /body & /html tags -->
