@@ -122,9 +122,21 @@ clockObject.start();
     }
 
 
+
   cocktailBtn.addEventListener("click", function(){
     
     cocktailCall();
     maxComicNum();
   })
   
+
+  cocktailBtn.addEventListener("click", function(){
+    
+    cocktailCall();
+
+    maxComicNum();
+    
+
+  })
+
+
