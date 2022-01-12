@@ -125,8 +125,6 @@ clockObject.start();
   cocktailBtn.addEventListener("click", function(){
     
     cocktailCall();
-
     maxComicNum();
   })
-
   
