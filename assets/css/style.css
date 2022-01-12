@@ -1,5 +1,5 @@
 .header h1 {
-  background: linear-gradient(to right, rgb(230, 221, 210), rgb(96, 93, 90));
+  background: linear-gradient(to right, rgb(233, 197, 197), rgb(96, 93, 90));
 }
 
 #drink-disclaimer {
@@ -12,7 +12,21 @@
   border-radius: var(--border-radius);
   border: none;
   outline: none;
-  background: linear-gradient(to right, rgb(230, 221, 210), rgb(96, 93, 90));
+  background: linear-gradient(to right, rgb(233, 197, 197), rgb(96, 93, 90));
   box-shadow: 3px 3px var(--dark);
   transform: translate(-1px, -1px);
+}
+
+.box {
+  background: linear-gradient(to right, rgb(233, 197, 197), rgb(96, 93, 90));
+  border-radius: 3px;
+}
+
+.navbar {
+  background: rgb(165, 41, 41);
+  border-radius: 3px;
+}
+
+.block:not(:last-child) {
+  margin-bottom: 1.5rem;
 }
