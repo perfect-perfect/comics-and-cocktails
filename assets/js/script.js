@@ -1,4 +1,3 @@
-
 // uses JavaScript Classes to build clock
 class DigitalClock {
     constructor(element) {
@@ -40,6 +39,7 @@ const clockElement = document.querySelector(".clock");
 const clockObject = new DigitalClock(clockElement);
 
 clockObject.start();
+
 
 var cocktailBtn = document.querySelector("#comics-and-cocktails");
 var drinkImg = document.querySelector("#drink-image");
