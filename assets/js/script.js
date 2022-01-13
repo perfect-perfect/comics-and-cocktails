@@ -234,21 +234,22 @@ clockObject.start();
             drinkArray.push(localStorage.getItem('drinkID'+i));
 
         }
-        for (let i = 0; i < drinkArray.length; i++) {
+        for (let i = -1; i < drinkArray.length; i++) {
             if (drinkArray[i]) {
               drinkArrayIter.push(drinkArray[i]);
             }
           }
 
-        const newDrinkArray = drinkArray.filter((a) => a);
+        var randNumGen = Math.floor((Math.random() * drinkArrayIter.length));
 
-        var randNumGen = Math.floor((Math.random() * newDrinkArray.length) + 1);
+        //console.log(randNumGen);
+        //console.log(drinkArrayIter);
 
-        var savedId = newDrinkArray[randNumGen];
+        var savedId = drinkArrayIter[randNumGen];
 
         //console.log(savedId);
 
-        var apiUrl = "https://cors-anywhere.herokuapp.com/https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + savedId;
+        var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + savedId;
 
         fetch(apiUrl)
         .then((response) => {
@@ -276,17 +277,17 @@ clockObject.start();
             comicArray.push(localStorage.getItem('comicID'+i));
 
         }
-        for (let i = 0; i < comicArray.length; i++) {
+        for (let i = -1; i < comicArray.length; i++) {
             if (comicArray[i]) {
               comicArrayIter.push(comicArray[i]);
             }
           }
 
-        const newComicArray = comicArray.filter((a) => a);
+        var randNumGen = Math.floor((Math.random() * comicArrayIter.length));
 
-        var randNumGen = Math.floor((Math.random() * newComicArray.length) + 1);
+        //console.log(randNumGen);
 
-        var savedId = newComicArray[randNumGen];
+        var savedId = comicArrayIter[randNumGen];
 
         var apiUrl = "https://cors-anywhere.herokuapp.com/https://xkcd.com/" + savedId + "/info.0.json" ;
 
@@ -310,6 +311,8 @@ clockObject.start();
   cocktailBtn.addEventListener("click", function(){
     
     cocktailCall();
+    localStorage.clear;
+
     
   })
   comicBtn.addEventListener("click", function(){
