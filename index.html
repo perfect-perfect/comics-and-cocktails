@@ -23,24 +23,73 @@
     <header class="main header">
         <!-- navigation will have interactive buttons that take you to other parts of the application -->
         <div>
+
+            <h1 class="title py-6 is-size-1 has-text-centered has-text-dark"> Welcome to Comics and Cocktails!</h1>
+        
+               <nav class="navbar">
+
             <h1 class="py-6 is-size-1 has-text-centered has-text-danger"> Welcome to Comics and Cocktails!</h1>
         
                <nav class="navbar is-danger">
+
                    <!-- navbar brand, navbar menu... -->
                    <div class="navbar-brand">
-                       <a class="navbar-item">
-                           <img src="assets/images/drink.jpg" alt="drink icon">
-                       </a>
+                       <div class="tile is-ancestor">
+                        <a class="navbar-item">
+                           <div class="tile is-parent" width="100%">
+                               <article class="tile is-child box">
+                                   <!-- can't seem to get this imag larger!  DOH!-->
+                                   <figure class="image is-264by264" >
+                                    <img src="assets/images/drink.jpg" alt="drink icon" image is-square></img> 
+                                    </figure>                                  
+                                </article>
+                            </div>  
+                        </a>  
+                        </div>
                    </div>
-
+                 
                    <div class="navbar-menu" id="nav-links">
                        <div class="navbar-start">
+
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">   
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth"><strong>Drink of the Day!</strong></a>
+                                </article>
+                            </div>
+
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">   
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth"><strong>Comic of the Day!</strong></a>
+                                </article>
+                            </div>
+
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">   
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth"><strong>Recent Cocktails</strong></a>
+                                </article>
+                            </div>
+
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">   
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth"><strong>Recent Comic</strong></a>
+                                </article>
+                            </div>
+
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">   
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth"><strong>Home</strong></a>
+                                </article>
+                            </div>
+
+                        </div>
+
                            <a class="button is-dark is-medium is-mobile navbar-item">Drink of the Day!</a>
                            <a class="button is-dark is-medium is-mobile navbar-item">Comic of the Day!</a>
                            <a class="button is-dark is-medium is-mobile navbar-item">Saved Cocktails</a>
                            <a class="button is-dark is-medium is-mobile navbar-item">Saved Comics</a>
                            <a class="button is-dark is-medium is-mobile navbar-item">Home</a>
                        </div>
+
                    </div>
                 </nav>
         </div>    
@@ -49,31 +98,68 @@
     <main class="page-content" id="page-content">
         
         <!-- time -->
-        <div class="clock">
-            <span class="clock-time"></span>
-            <span class="clock-ampm"></span>
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <article class="tile is-child box">
+                    <div class="clock is-dark is-medium is-mobile is-rounded is-focused is-one-fifth">
+                    <span class="clock-time"></span>
+                    <span class="clock-ampm"></span>
+                    </div>
+                </article>
+            </div>
         </div>
  
 
         <!-- drinks section -->
-        <div class="columns">
-            <div class="column">
-                <section class="drink-wrapper" id="drink-wrapper">
-
-                    <!-- drink picture-->
-                    <div class="drink-picture" id="drink-picture">Drink Pic
-                        <!-- Javascript will dynamically generate API content here -->
-                    </div>                  
-                </section>
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <article class="tile is-child box">
+                   <div class="drink-picture" id="drink-picture" id="comics-and-cocktails">Drink Pic
+                            <img id="drink-img" height="500" width="500">
+                            <!-- Javascript will dynamically generate API content here -->                
+                    </div>
+                </article>
             </div>
+     
 
                 <!-- drink recipe --> 
-            <div class="column">Drink Recipe              
-                <section class="drink-recipe" id="drink-recipe">
-                    <!-- Javascript will dynamically generate API content here -->
-                </section>
-            </div>
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+                <div class="column">Drink Recipe              
+                    <section class="drink-recipe" id="drink-recipe">
+                        <!-- Javascript will dynamically generate API content here -->
+                    </section>
+                </div>
+            </article>
         </div>
+
+    </div>
+
+    <div class="tile is-ancestor">
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+                <!-- comic section-->
+                <div class="comic" id="comic">COMIC
+                    <img id="comic-img" height="500" width="1200">
+                    <!-- JavaScript will dynamically generate API content here-->
+                </div>   
+            </article>
+        </div>
+    </div>
+
+    </main><br><br>
+
+    <footer>
+        <nav class="navbar">           
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <button class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item" id="drink-disclaimer">
+                        <a href="./disclaimer-policy.html"><strong><em>Read Our Disclaimer Policy</a></em></strong></button>
+                    </article>
+                </div>
+            
+        </nav>
+
       
         <div class="columns">
             <div class="column">COMIC
@@ -92,6 +178,7 @@
             <button class="button is-link is-small is-outlined" id="drink-disclaimer">Read Our Disclaimer
                 <a href="./disclaimer-policy.html"></a>
             </button>
+
     </footer>
 
     <!-- JavaScript link can go inside the body or between /body & /html tags -->

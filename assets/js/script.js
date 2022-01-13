@@ -92,7 +92,6 @@ clockObject.start();
         .catch((error) => console.error("Error code:", error));
     };
 
-
     function comicCall(){
 
         var randNumGen = Math.floor((Math.random() * comicAmount) + 1);
@@ -122,19 +121,10 @@ clockObject.start();
     }
 
 
-
   cocktailBtn.addEventListener("click", function(){
     
     cocktailCall();
     maxComicNum();
   })
   
-
-  cocktailBtn.addEventListener("click", function(){
-    
-    cocktailCall();
-
-    maxComicNum();
-    
-
-  })
+  
