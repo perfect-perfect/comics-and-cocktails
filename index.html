@@ -47,25 +47,31 @@
 
                             <div class="tile is-parent">
                                 <article class="tile is-child box">   
-                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth"><strong>Drink of the Day!</strong></a>
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth" id="drink-of-day"><strong>Drink of the Day!</strong></a>
                                 </article>
                             </div>
 
                             <div class="tile is-parent">
                                 <article class="tile is-child box">   
-                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth"><strong>Comic of the Day!</strong></a>
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth" id="comic-of-day"><strong>Comic of the Day!</strong></a>
                                 </article>
                             </div>
 
                             <div class="tile is-parent">
                                 <article class="tile is-child box">   
-                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth"><strong>Recent Cocktails</strong></a>
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth" id="saved-cocktails"><strong>Recent Cocktails</strong></a>
                                 </article>
                             </div>
 
                             <div class="tile is-parent">
                                 <article class="tile is-child box">   
-                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth"><strong>Recent Comic</strong></a>
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth" id="saved-comic"><strong>Recent Comic</strong></a>
+                                </article>
+                            </div>
+
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">   
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth" id="save-both"><strong>Save Drink/Comic</strong></a>
                                 </article>
                             </div>
 
@@ -132,7 +138,7 @@
         <div class="tile is-ancestor">
             <div class="tile is-parent">
                 <article class="tile is-child box">
-                   <div class="drink-picture" id="drink-picture" id="comics-and-cocktails">Drink Pic
+                   <div class="drink-picture" id="drink-picture">Drink Pic
                             <img id="drink-img" height="500" width="500">
                             <!-- Javascript will dynamically generate API content here -->                
                     </div>
@@ -163,6 +169,16 @@
             <article class="tile is-child box">
                 <div class="column">Drink Recipe              
                     <section class="drink-recipe" id="drink-recipe">
+                        <h2 id="drink-name"></h2>
+                    <!--Can be deleted-->
+                    <p>Recipe List</p>
+                    <ul id="recipe-list"></ul>
+                    <!--Can be deleted-->
+                    <p>Measure List</p>
+                    <ul id="measure-list"></ul>
+                    <!--Can be deleted-->
+                    <p>Instructions</p>
+                    <p id="instructions"></p>
                         <!-- Javascript will dynamically generate API content here -->
                     </section>
                 </div>
