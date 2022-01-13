@@ -1,4 +1,4 @@
-var cocktailBtn = document.querySelector("#comics-and-cocktails");
+ var cocktailBtn = document.querySelector("#comics-and-cocktails");
 var drinkImg = document.querySelector("#drink-img");
 var comicImg = document.querySelector("#comic-img");
 var comicAmount;
@@ -44,10 +44,6 @@ const clockElement = document.querySelector(".clock");
 const clockObject = new DigitalClock(clockElement);
 
 clockObject.start();
-
-
-var cocktailBtn = document.querySelector("#comics-and-cocktails");
-var drinkImg = document.querySelector("#drink-image");
 
 
     function cocktailCall(){
@@ -130,4 +126,5 @@ var drinkImg = document.querySelector("#drink-image");
     cocktailCall();
     maxComicNum();
   })
+  
   
