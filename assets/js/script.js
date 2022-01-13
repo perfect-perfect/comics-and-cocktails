@@ -1,3 +1,8 @@
+var cocktailBtn = document.querySelector("#comics-and-cocktails");
+var drinkImg = document.querySelector("#drink-img");
+var comicImg = document.querySelector("#comic-img");
+var comicAmount;
+
 // uses JavaScript Classes to build clock
 class DigitalClock {
     constructor(element) {
@@ -41,10 +46,6 @@ const clockObject = new DigitalClock(clockElement);
 clockObject.start();
 
 
-var cocktailBtn = document.querySelector("#comics-and-cocktails");
-var drinkImg = document.querySelector("#drink-image");
-
-
     function cocktailCall(){
         var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
@@ -58,19 +59,82 @@ var drinkImg = document.querySelector("#drink-image");
     })
         .then(data => {
         console.log(data);
-        setImage(data);
+        setDrinkImage(data);
     })
         .catch((error) => console.error("Error code:", error));
     };
 
-    function setImage(drinkUrl){
+    function setDrinkImage(drinkUrl){
         const drink = drinkUrl.drinks[0];
         drinkImg.src = drink.strDrinkThumb;
 
     }
 
+    function maxComicNum(){
+        var apiUrl = "https://cors-anywhere.herokuapp.com/https://xkcd.com/info.0.json";
+
+        fetch(apiUrl)
+
+        .then((response) => {
+        if (response.ok) {
+        return response.json();
+        } else {
+        throw new Error("Response Error");
+    }
+    })
+        .then(data => {
+
+        comicAmount = data.num;
+
+        comicCall();
+
+    })
+        .catch((error) => console.error("Error code:", error));
+    };
+
+
+    function comicCall(){
+
+        var randNumGen = Math.floor((Math.random() * comicAmount) + 1);
+
+        console.log(randNumGen);
+
+        var apiUrl = "https://cors-anywhere.herokuapp.com/https://xkcd.com/" + randNumGen + "/info.0.json";
+
+        fetch(apiUrl)
+
+        .then((response) => {
+        if (response.ok) {
+        return response.json();
+        } else {
+        throw new Error("Response Error");
+    }
+    })
+        .then(data => {
+        console.log(data);
+        setComicImage(data);
+    })
+        .catch((error) => console.error("Error code:", error));
+    };
+
+    function setComicImage(comicUrl){
+        comicImg.src = comicUrl.img;
+    }
+
+
+
   cocktailBtn.addEventListener("click", function(){
     
     cocktailCall();
+    maxComicNum();
+  })
+  
+
+  cocktailBtn.addEventListener("click", function(){
+    
+    cocktailCall();
+
+    maxComicNum();
+    
 
   })
