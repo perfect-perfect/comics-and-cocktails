@@ -234,17 +234,18 @@ clockObject.start();
             drinkArray.push(localStorage.getItem('drinkID'+i));
 
         }
-        for (let i = 0; i < drinkArray.length; i++) {
+        for (let i = -1; i < drinkArray.length; i++) {
             if (drinkArray[i]) {
               drinkArrayIter.push(drinkArray[i]);
             }
           }
 
-        const newDrinkArray = drinkArray.filter((a) => a);
+        var randNumGen = Math.floor((Math.random() * drinkArrayIter.length));
 
-        var randNumGen = Math.floor((Math.random() * newDrinkArray.length) + 1);
+        //console.log(randNumGen);
+        //console.log(drinkArrayIter);
 
-        var savedId = newDrinkArray[randNumGen];
+        var savedId = drinkArrayIter[randNumGen];
 
         //console.log(savedId);
 
@@ -276,19 +277,19 @@ clockObject.start();
             comicArray.push(localStorage.getItem('comicID'+i));
 
         }
-        for (let i = 0; i < comicArray.length; i++) {
+        for (let i = -1; i < comicArray.length; i++) {
             if (comicArray[i]) {
               comicArrayIter.push(comicArray[i]);
             }
           }
 
-        const newComicArray = drinkArray.filter((a) => a);
+        var randNumGen = Math.floor((Math.random() * comicArrayIter.length));
 
-        var randNumGen = Math.floor((Math.random() * newComicArray.length) + 1);
+        //console.log(randNumGen);
 
-        var savedId = newComicArray[randNumGen];
+        var savedId = comicArrayIter[randNumGen];
 
-        var apiUrl = "https://xkcd.com/614/info.0.json" ;
+        var apiUrl = "https://cors-anywhere.herokuapp.com/https://xkcd.com/" + savedId + "/info.0.json" ;
 
         fetch(apiUrl)
         .then((response) => {
@@ -299,12 +300,9 @@ clockObject.start();
     }
     })
         .then(data => {
-        //console.log("Got to saved.");
-        //console.log(data);
-        setDrinkName(data);
-        setDrinkImage(data);
-        getIngred(data);
-        setInstruc(data);
+        setComicImage(data);
+        savedComicId = randNumGen;
+   
     })
         .catch((error) => console.error("Error code:", error));
     };
@@ -313,6 +311,8 @@ clockObject.start();
   cocktailBtn.addEventListener("click", function(){
     
     cocktailCall();
+    localStorage.clear;
+
     
   })
   comicBtn.addEventListener("click", function(){
@@ -329,7 +329,7 @@ clockObject.start();
 
   savedComicBtn.addEventListener("click", function(){
     
-      
+    savedComicCall();
         
   })
 

@@ -12,8 +12,13 @@ Comics and Cocktails is a web application that allows individuals 21 years and o
 
 ## Website
 
+[Live website link](https://perfect-perfect.github.io/comics-and-cocktails/)
+
+[Live github repo link](https://github.com/perfect-perfect/comics-and-cocktails)
 
 ## Image
+
+![Website Features Image](assets/images/websitePic.PNG)
 
 # Made By:
 Gilberto Covarrubias, Duvalier Johnson, Michael Monihan, Criste Phillips, Savannah Polcen
