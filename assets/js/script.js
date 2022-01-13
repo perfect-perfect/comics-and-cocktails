@@ -92,7 +92,6 @@ clockObject.start();
         .catch((error) => console.error("Error code:", error));
     };
 
-
     function comicCall(){
 
         var randNumGen = Math.floor((Math.random() * comicAmount) + 1);
