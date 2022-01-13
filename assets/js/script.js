@@ -50,6 +50,7 @@ const clockObject = new DigitalClock(clockElement);
 
 clockObject.start();
 
+
     function cocktailCall(){
         var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
@@ -148,7 +149,7 @@ clockObject.start();
         var apiUrl = "https://cors-anywhere.herokuapp.com/https://xkcd.com/info.0.json";
 
         fetch(apiUrl)
-        
+
         .then((response) => {
         if (response.ok) {
         return response.json();
@@ -168,7 +169,7 @@ clockObject.start();
 
 
     function comicCall(){
-        
+
         var randNumGen = Math.floor((Math.random() * comicAmount) + 1);
 
         //console.log(randNumGen);
@@ -176,7 +177,7 @@ clockObject.start();
         var apiUrl = "https://cors-anywhere.herokuapp.com/https://xkcd.com/" + randNumGen + "/info.0.json";
 
         fetch(apiUrl)
-        
+
         .then((response) => {
         if (response.ok) {
         return response.json();
@@ -195,6 +196,15 @@ clockObject.start();
         comicImg.src = comicUrl.img;
     }
 
+
+
+  cocktailBtn.addEventListener("click", function(){
+    
+    cocktailCall();
+    maxComicNum();
+  })
+  
+
   cocktailBtn.addEventListener("click", function(){
     
     cocktailCall();
@@ -203,4 +213,5 @@ clockObject.start();
     
 
   })
+
 
