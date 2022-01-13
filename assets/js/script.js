@@ -285,7 +285,7 @@ clockObject.start();
 
         var randNumGen = Math.floor((Math.random() * comicArrayIter.length));
 
-        //console.log(randNumGen);
+        
 
         var savedId = comicArrayIter[randNumGen];
 
