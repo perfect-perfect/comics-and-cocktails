@@ -1,12 +1,23 @@
-var cocktailBtn = document.querySelector("#comics-and-cocktails");
+var cocktailBtn = document.querySelector("#drink-of-day");
+var comicBtn = document.querySelector("#comic-of-day");
+var savedDrinkBtn = document.querySelector("#saved-cocktails");
+var savedComicBtn = document.querySelector("#saved-comic");
+var saveBothBtn = document.querySelector("#save-both");
+
+
 var drinkImg = document.querySelector("#drink-img");
 var comicImg = document.querySelector("#comic-img");
+
 var recipeList = document.querySelector("#recipe-list");
 var drinkName = document.querySelector("#drink-name");
 var measureList = document.querySelector("#measure-list");
+
 var instruc = document.querySelector("#instructions");
 
+
 var comicAmount;
+var savedDrinkId;
+var savedComicId;
 
 // uses JavaScript Classes to build clock
 class DigitalClock {
@@ -67,6 +78,7 @@ clockObject.start();
         setDrinkImage(data);
         getIngred(data);
         setInstruc(data);
+        
     })
         .catch((error) => console.error("Error code:", error));
     };
@@ -74,7 +86,8 @@ clockObject.start();
     function setDrinkName(drinkUrl){
         const drink = drinkUrl.drinks[0];
         drinkName.textContent = drink.strDrink;
-
+        savedDrinkId = drink.idDrink;
+        //console.log(savedDrinkId);
     }
     function setInstruc(drinkUrl){
         const drink = drinkUrl.drinks[0];
@@ -136,12 +149,8 @@ clockObject.start();
 
         listItem.innerHTML = ingred;
         
-        cocktailIngredients.appendChild(listItem);
-        
+        cocktailIngredients.appendChild(listItem);       
     }
-
- 
-
     }
 
     function maxComicNum(){
@@ -165,13 +174,11 @@ clockObject.start();
     })
         .catch((error) => console.error("Error code:", error));
     };
-
-
     function comicCall(){
         
         var randNumGen = Math.floor((Math.random() * comicAmount) + 1);
 
-        //console.log(randNumGen);
+        console.log(randNumGen);
 
         var apiUrl = "https://cors-anywhere.herokuapp.com/https://xkcd.com/" + randNumGen + "/info.0.json";
 
@@ -185,22 +192,151 @@ clockObject.start();
     }
     })
         .then(data => {
-        console.log(data);
+        //console.log(data);
         setComicImage(data);
+        savedComicId = randNumGen;
+        //console.log(savedComicId);
     })
         .catch((error) => console.error("Error code:", error));
     };
 
     function setComicImage(comicUrl){
         comicImg.src = comicUrl.img;
+
     }
+    function saveLocal(){
+    if(savedDrinkId == null || savedComicId == null){
+       
+    }else {
+        var val;
+        for(let  i = 1; i<localStorage.length;i++ ){
+            val = i;
+        }
+        if(val == null ){
+            localStorage.setItem('drinkID0', savedDrinkId);
+            localStorage.setItem('comicID0', savedComicId);
+
+
+        }
+        else{
+            localStorage.setItem('drinkID' + val, savedDrinkId);
+            localStorage.setItem('comicID' + val, savedComicId);
+
+        }
+    }
+
+    }
+
+    function savedCocktailCall(){
+        let drinkArray = [];
+        let drinkArrayIter = [];
+        for(let  i = 0; i<localStorage.length;i++ ){
+            drinkArray.push(localStorage.getItem('drinkID'+i));
+
+        }
+        for (let i = 0; i < drinkArray.length; i++) {
+            if (drinkArray[i]) {
+              drinkArrayIter.push(drinkArray[i]);
+            }
+          }
+
+        const newDrinkArray = drinkArray.filter((a) => a);
+
+        var randNumGen = Math.floor((Math.random() * newDrinkArray.length) + 1);
+
+        var savedId = newDrinkArray[randNumGen];
+
+        //console.log(savedId);
+
+        var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + savedId;
+
+        fetch(apiUrl)
+        .then((response) => {
+        if (response.ok) {
+        return response.json();
+        } else {
+        throw new Error("Response Error");
+    }
+    })
+        .then(data => {
+        //console.log("Got to saved.");
+        //console.log(data);
+        setDrinkName(data);
+        setDrinkImage(data);
+        getIngred(data);
+        setInstruc(data);
+    })
+        .catch((error) => console.error("Error code:", error));
+    };
+
+    function savedComicCall(){
+        let comicArray = [];
+        let comicArrayIter = [];
+        for(let  i = 0; i<localStorage.length;i++ ){
+            comicArray.push(localStorage.getItem('comicID'+i));
+
+        }
+        for (let i = 0; i < comicArray.length; i++) {
+            if (comicArray[i]) {
+              comicArrayIter.push(comicArray[i]);
+            }
+          }
+
+        const newComicArray = drinkArray.filter((a) => a);
+
+        var randNumGen = Math.floor((Math.random() * newComicArray.length) + 1);
+
+        var savedId = newComicArray[randNumGen];
+
+        var apiUrl = "https://xkcd.com/614/info.0.json" ;
+
+        fetch(apiUrl)
+        .then((response) => {
+        if (response.ok) {
+        return response.json();
+        } else {
+        throw new Error("Response Error");
+    }
+    })
+        .then(data => {
+        //console.log("Got to saved.");
+        //console.log(data);
+        setDrinkName(data);
+        setDrinkImage(data);
+        getIngred(data);
+        setInstruc(data);
+    })
+        .catch((error) => console.error("Error code:", error));
+    };
+    
 
   cocktailBtn.addEventListener("click", function(){
     
     cocktailCall();
-
+    
+  })
+  comicBtn.addEventListener("click", function(){
+    
     maxComicNum();
     
+  })
+
+  saveBothBtn.addEventListener("click", function(){
+    
+    saveLocal();
 
   })
+
+  savedComicBtn.addEventListener("click", function(){
+    
+      
+        
+  })
+
+  savedDrinkBtn.addEventListener("click", function(){
+
+    savedCocktailCall();
+        
+})
+
 

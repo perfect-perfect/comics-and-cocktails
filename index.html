@@ -20,25 +20,80 @@
 </head>
 
 <body>
-    <section class="main header">
+    <header class="main header">
         <!-- navigation will have interactive buttons that take you to other parts of the application -->
-        <nav>
-            <h1 class="py-6 is-size-1 has-text-centered has-text-danger"> Welcome to Comics and Cocktails!</h1>
-                  <!--<button type="button" id="comics-and-cocktails">Comics and Cocktails</button>-->
-                <!--<button type="button" id="saved-cocktails">Saved Cocktails</button> -->
-               <nav class="navbar is-danger">
+        <div>
+            <h1 class="title py-6 is-size-1 has-text-centered has-text-dark"> Welcome to Comics and Cocktails!</h1>
+        
+               <nav class="navbar">
                    <!-- navbar brand, navbar menu... -->
                    <div class="navbar-brand">
-                       <a class="navbar-item">
-                           <img src="assets/images/drink.jpg" alt="drink icon">
-                       </a>
+                       <div class="tile is-ancestor">
+                        <a class="navbar-item">
+                           <div class="tile is-parent" width="100%">
+                               <article class="tile is-child box">
+                                   <!-- can't seem to get this imag larger!  DOH!-->
+                                   <figure class="image is-264by264" >
+                                    <img src="assets/images/drink.jpg" alt="drink icon" image is-square></img> 
+                                    </figure>                                  
+                                </article>
+                            </div>  
+                        </a>  
+                        </div>
                    </div>
-
+                 
                    <div class="navbar-menu" id="nav-links">
                        <div class="navbar-start">
-                           <a class="navbar-item">Saved Cocktails</a>
-                           <a class="navbar-item">Saved Comics</a>
-                           <a class="navber-item">Home</a>
+
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">   
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth" id="drink-of-day"><strong>Drink of the Day!</strong></a>
+                                </article>
+                            </div>
+
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">   
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth" id="comic-of-day"><strong>Comic of the Day!</strong></a>
+                                </article>
+                            </div>
+
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">   
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth" id="saved-cocktails"><strong>Recent Cocktails</strong></a>
+                                </article>
+                            </div>
+
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">   
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth" id="saved-comic"><strong>Recent Comic</strong></a>
+                                </article>
+                            </div>
+
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">   
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth" id="save-both"><strong>Save Drink/Comic</strong></a>
+                                </article>
+                            </div>
+
+                            <div class="tile is-parent">
+                                <article class="tile is-child box">   
+                                    <a class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item is-one-fifth"><strong>Home</strong></a>
+                                </article>
+                            </div>
+
+                        </div>
+                   </div>
+                </nav>
+        </div>    
+    </header>
+    
+    <main class="page-content" id="page-content">
+
+                           <a class="button is-dark is-medium is-mobile navbar-item">Drink of the Day!</a>
+                           <a class="button is-dark is-medium is-mobile navbar-item">Comic of the Day!</a>
+                           <a class="button is-dark is-medium is-mobile navbar-item">Saved Cocktails</a>
+                           <a class="button is-dark is-medium is-mobile navbar-item">Saved Comics</a>
+                           <a class="button is-dark is-medium is-mobile navbar-item">Home</a>
                        </div>
                    </div>
                   </nav>
@@ -47,11 +102,7 @@
     </header>
        <main>
         <!-- divide page into sections -->
-        <button class="button is-warning">
-            Drink of the day!
-           </button>
-
-        <div>
+          <div>
            
         </div>     
 
@@ -59,9 +110,7 @@
         <section class="section">
             <div class="container">
                 <h1 class="title">
-                    <button class="button is-link is-medium is-mobile" id="comics-and-cocktails">Comics and Cocktails</button>
-                    <button class="button is-link is-medium is-mobile" id="saved-cocktails">Saved Cocktails</button>
-                </h1>
+                   </h1>
             </div>
         </section>
         </nav>
@@ -69,27 +118,36 @@
     
     <main class="page-content" id="page-content">
 
+
         
         <!-- time -->
-        <div class="clock">
-            <span class="clock-time"></span>
-            <span class="clock-ampm"></span>
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <article class="tile is-child box">
+                    <div class="clock is-dark is-medium is-mobile is-rounded is-focused is-one-fifth">
+                    <span class="clock-time"></span>
+                    <span class="clock-ampm"></span>
+                    </div>
+                </article>
+            </div>
         </div>
+ 
+
+
+        <!-- drinks section -->
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <article class="tile is-child box">
+                   <div class="drink-picture" id="drink-picture">Drink Pic
+                            <img id="drink-img" height="500" width="500">
+                            <!-- Javascript will dynamically generate API content here -->                
+                    </div>
+                </article>
+
+        </section>
         
 
         </section>
-
-        <!-- need to get time to show here-->
-        <div class="columns">
-            <div class="column">
-                <section class="time">
-                    <div class="time">
-                        <span id="hour">00</span>:
-                        <span id="minutes">00</span>
-                    </div>
-                </section>
-            </div>
-        </div>
 
         <!-- drinks section -->
         <div class="columns">
@@ -102,12 +160,16 @@
                         <!-- Javascript will dynamically generate API content here -->
                     </div>                  
                 </section>
+
             </div>
+     
 
                 <!-- drink recipe --> 
-            <div class="column">Drink Recipe              
-                <section class="drink-recipe" id="drink-recipe">
-                    <h2 id="drink-name"></h2>
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+                <div class="column">Drink Recipe              
+                    <section class="drink-recipe" id="drink-recipe">
+                        <h2 id="drink-name"></h2>
                     <!--Can be deleted-->
                     <p>Recipe List</p>
                     <ul id="recipe-list"></ul>
@@ -117,27 +179,46 @@
                     <!--Can be deleted-->
                     <p>Instructions</p>
                     <p id="instructions"></p>
-                    <!-- Javascript will dynamically generate API content here -->
-                </section>
-            </div>
+                        <!-- Javascript will dynamically generate API content here -->
+                    </section>
+                </div>
+            </article>
         </div>
-      
-        <div class="columns">
-            <div class="column">COMIC
-            <section class="comic-wrapper" id="comic-wrapper">
+    </div>
 
+    <div class="tile is-ancestor">
+        <div class="tile is-parent">
+            <article class="tile is-child box">
                 <!-- comic section-->
+
+                <div class="comic" id="comic">COMIC
+                    <img id="comic-img" height="500" width="1200">
+
                 <div class="comic" id="comic">
                     <img id="comic-img" height="500" width="500">
+
                     <!-- JavaScript will dynamically generate API content here-->
-                </div>
-            </section>
-            </div>
-        </div>    
+                </div>   
+            </article>
+        </div>
+    </div>
+
     </main><br><br>
 
     <footer>
+
+        <nav class="navbar">           
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <button class="button is-dark is-medium is-mobile is-rounded is-focused navbar-item" id="drink-disclaimer"><strong><em>Read Our Disclaimer Policy
+                        <a href="./disclaimer-policy.html"></a></em></strong></button>
+                    </article>
+                </div>
+            
+        </nav>
+
        <h2>
+
     </footer>
 
     <!-- JavaScript link can go inside the body or between /body & /html tags -->

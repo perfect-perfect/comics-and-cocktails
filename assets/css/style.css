@@ -1,5 +1,35 @@
-::"scripts": {
-    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss css/mystyles.css",
-    "css-watch": "npm run css-build -- --watch",
-    "start": "npm run css-watch"
-  }
+.header h1 {
+  background: linear-gradient(to right, rgb(233, 197, 197), rgb(96, 93, 90));
+}
+
+#drink-disclaimer {
+  font-size: 2rem;
+  text-decoration:none;
+  padding: 6px 5px;
+  width: 100%;
+  display: block;
+  margin: 5px 0;
+  border-radius: var(--border-radius);
+  border: none;
+  outline: none;
+  background: linear-gradient(to right, rgb(233, 197, 197), rgb(96, 93, 90));
+  box-shadow: 3px 3px var(--dark);
+  transform: translate(-1px, -1px);
+}
+
+.box {
+  background: linear-gradient(to right, rgb(233, 197, 197), rgb(96, 93, 90));
+  border-radius: 3px;
+  box-shadow: 0 0.5em 1em;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.navbar {
+  background: rgb(165, 41, 41);
+  border-radius: 3px;
+}
+
+.block:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
