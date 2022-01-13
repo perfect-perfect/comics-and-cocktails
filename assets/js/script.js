@@ -248,7 +248,7 @@ clockObject.start();
 
         //console.log(savedId);
 
-        var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + savedId;
+        var apiUrl = "https://cors-anywhere.herokuapp.com/https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + savedId;
 
         fetch(apiUrl)
         .then((response) => {
@@ -282,13 +282,13 @@ clockObject.start();
             }
           }
 
-        const newComicArray = drinkArray.filter((a) => a);
+        const newComicArray = comicArray.filter((a) => a);
 
         var randNumGen = Math.floor((Math.random() * newComicArray.length) + 1);
 
         var savedId = newComicArray[randNumGen];
 
-        var apiUrl = "https://xkcd.com/614/info.0.json" ;
+        var apiUrl = "https://cors-anywhere.herokuapp.com/https://xkcd.com/" + savedId + "/info.0.json" ;
 
         fetch(apiUrl)
         .then((response) => {
@@ -299,12 +299,9 @@ clockObject.start();
     }
     })
         .then(data => {
-        //console.log("Got to saved.");
-        //console.log(data);
-        setDrinkName(data);
-        setDrinkImage(data);
-        getIngred(data);
-        setInstruc(data);
+        setComicImage(data);
+        savedComicId = randNumGen;
+   
     })
         .catch((error) => console.error("Error code:", error));
     };
@@ -329,7 +326,7 @@ clockObject.start();
 
   savedComicBtn.addEventListener("click", function(){
     
-      
+    savedComicCall();
         
   })
 
