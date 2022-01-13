@@ -154,7 +154,7 @@ clockObject.start();
     }
 
     function maxComicNum(){
-        var apiUrl = "https://cors-anywhere.herokuapp.com/https://xkcd.com/info.0.json";
+        var apiUrl = "https://xkcd.com/info.0.json";
 
         fetch(apiUrl)
         
@@ -180,7 +180,7 @@ clockObject.start();
 
         console.log(randNumGen);
 
-        var apiUrl = "https://cors-anywhere.herokuapp.com/https://xkcd.com/" + randNumGen + "/info.0.json";
+        var apiUrl = "https://xkcd.com/" + randNumGen + "/info.0.json";
 
         fetch(apiUrl)
         
@@ -289,7 +289,7 @@ clockObject.start();
 
         var savedId = comicArrayIter[randNumGen];
 
-        var apiUrl = "https://cors-anywhere.herokuapp.com/https://xkcd.com/" + savedId + "/info.0.json" ;
+        var apiUrl = "https://xkcd.com/" + savedId + "/info.0.json" ;
 
         fetch(apiUrl)
         .then((response) => {
