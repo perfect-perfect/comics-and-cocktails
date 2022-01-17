@@ -311,7 +311,7 @@ clockObject.start();
   cocktailBtn.addEventListener("click", function(){
     
     cocktailCall();
-    localStorage.clear;
+    
 
     
   })
